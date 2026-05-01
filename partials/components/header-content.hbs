@@ -63,8 +63,9 @@
 
         {{!-- Landing layout --}}
         {{#match headerStyle "Landing"}}
-            <h1 class="gh-header-title is-title">{{#if @custom.header_text}}{{@custom.header_text}}{{else}}{{@site.description}}{{/if}}</h1>
-            {{> "email-subscription" email_field_id="header-email"}}
+            {{!-- <h1 class="gh-header-title is-title">{{#if @custom.header_text}}{{@custom.header_text}}{{else}}{{@site.description}}{{/if}}</h1> --}}
+            {{!-- {{> "email-subscription" email_field_id="header-email"}} --}}
+            {{> "olson-landing-header" size="small" style="image"}}
         {{/match}}
 
         {{!-- Search layout --}}

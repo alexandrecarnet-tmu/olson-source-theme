@@ -1,28 +1,40 @@
+# Build outputs
+assets/built/
+dist/
+*.zip
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs & debug
+npm-debug.log
+yarn-error.log
+*.log
+pids
+logs
+results
+
+# Secrets & local config
+.env
+.env.*
+config.json
+
+# Legacy / misc artifacts
 b-cov
 *.seed
-*.log
 *.csv
 *.dat
 *.out
 *.pid
 *.gz
-
-pids
-logs
-results
-
-npm-debug.log
-node_modules
-package-lock.json
-
-.idea/*
 *.iml
 projectFilesBackup
-
-.DS_Store
-
-dist/
-
-config.json
 changelog.md
 changelog.md.bk
+
+# Editor & OS
+.idea/
+.vscode/
+.DS_Store

@@ -2,13 +2,20 @@
     <div class="gh-footer-inner gh-inner">
 
         <div class="gh-footer-bar">
-            <span class="gh-footer-logo is-title">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </span>
+
+            <div class="gh-footer-brand">
+                <span class="gh-footer-logo">
+                    <img src="{{asset 'images/branding/TMU-rgb.svg'}}" style="height: 1lh;" alt="TMU logo">
+                </span>
+                <span class="gh-footer-logo is-title">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </span>
+            </div>
+
             <nav class="gh-footer-menu">
                 {{navigation type="secondary"}}
             </nav>

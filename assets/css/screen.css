@@ -1,3 +1,135 @@
+
+/* Landing page header
+/* ---------------------------------------------------------- */
+
+.gh-header:has(#olson-landing-title) {
+    background-color: #000;
+    margin-bottom: 1lh;
+}
+
+#olson-landing-title {
+    /* font-family: var(--font-serif); */
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: #fff;
+}
+
+#olson-landing-subtitle {
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
+    line-height: 1.6;
+    color: rgb(255 255 255 / 0.75);
+    max-width: 60ch;
+    margin: 1.6rem auto 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* Footer edits
+/* ---------------------------------------------------------- */
+
+.gh-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.gh-footer-bar {
+    grid-template-columns: auto 1fr auto;
+}
+
+/* Team Member Cards
+/* ---------------------------------------------------------- */
+
+.gh-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.gh-team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: var(--color-white);
+    transition: border-color 0.2s ease;
+}
+
+.has-light-text .gh-team-card {
+    background: rgb(255 255 255 / 0.05);
+}
+
+.gh-team-card:hover {
+    border-color: var(--ghost-accent-color);
+}
+
+.gh-team-photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+.gh-team-name {
+    font-size: 1.7rem;
+    font-weight: 725;
+    letter-spacing: -0.014em;
+    color: var(--color-primary-text);
+    margin: 0 0 4px;
+}
+
+.gh-team-role {
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
+    margin: 0 0 14px;
+}
+
+.gh-team-social {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.gh-team-social a {
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.gh-team-social a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.gh-team-social a:hover {
+    color: var(--color-primary-text);
+}
+
+@media (max-width: 900px) {
+    .gh-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gh-team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Table of contents
 /* ------------------------------------------------------------
 
@@ -1357,7 +1489,7 @@ Search                         LOGO                    Login Subscribe
 .gh-header.is-classic {
     display: flex;
     margin-top: 0;
-    padding-block: 160px;
+    /* padding-block: 160px; */
 }
 
 .gh-header.is-classic .gh-header-inner {
@@ -2169,6 +2301,22 @@ unless a heading is the very first element in the post content */
     text-decoration: underline;
 }
 
+.gh-content a[href*="linkedin.com"]:not(.gh-team-card a[href*="linkedin.com"]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+}
+
+.gh-content a[href*="linkedin.com"]:not(.gh-team-card a[href*="linkedin.com"])::before {
+    content: "";
+    width: 0.95em;
+    height: 0.95em;
+    flex: 0 0 0.95em;
+    background-color: currentColor;
+    -webkit-mask: url("../images/linkedin-icon.svg") no-repeat center / contain;
+    mask: url("../images/linkedin-icon.svg") no-repeat center / contain;
+}
+
 .gh-content .kg-callout-card .kg-callout-text,
 .gh-content .kg-toggle-card .kg-toggle-content > :is(ul, ol, p) {
     font-size: 0.95em;
@@ -2761,7 +2909,7 @@ body[class*=" gh-font-heading"]:not(.gh-font-heading-fira-sans):not(.gh-font-hea
 
 .gh-footer-bar {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    /* grid-template-columns: 1fr auto 1fr; */
     align-items: center;
     column-gap: 32px;
     margin-bottom: 100px;
