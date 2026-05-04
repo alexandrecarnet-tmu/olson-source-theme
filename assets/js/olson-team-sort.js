@@ -13,14 +13,29 @@
     const getName = function (card) {
         return (card.querySelector('.gh-team-name')?.textContent || '').trim();
     };
-    
-    teamCards.sort(function (a, b) {
-        const roleCompare = getRole(a).localeCompare(getRole(b), undefined, {
-            sensitivity: 'base',
-            numeric: true,
-        });
 
-        if (roleCompare !== 0) return roleCompare;
+    const ROLE_ORDER = [
+        'Professor',
+        'Research Associate',
+        'Research Technician',
+        'Post Doctoral Researcher',
+        'PhD Student/Candidate',
+        'MSc Student',
+        'Undergraduate Researcher',
+    ];
+
+    const getRoleRank = function (role) {
+        const idx = ROLE_ORDER.findIndex(function (r) {
+            return role.toLowerCase().startsWith(r.toLowerCase());
+        });
+        return idx === -1 ? ROLE_ORDER.length : idx;
+    };
+
+    teamCards.sort(function (a, b) {
+        const rankA = getRoleRank(getRole(a));
+        const rankB = getRoleRank(getRole(b));
+
+        if (rankA !== rankB) return rankA - rankB;
 
         return getName(a).localeCompare(getName(b), undefined, {
             sensitivity: 'base',

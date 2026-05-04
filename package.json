@@ -2,7 +2,7 @@
     "name": "source-olsonlab",
     "description": "The Source official Ghost theme, with custom changes for the Olson Lab website",
     "demo": "https://source.ghost.io",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "engines": {
         "ghost": ">=5.0.0"
     },
